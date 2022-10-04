@@ -1,5 +1,4 @@
 class Solution:
     def kthLargestNumber(self, nums: List[str], k: int) -> str:
-        numbers=sorted([int(i) for i in nums],reverse=True)
-        return str(numbers[k-1])
+        return str(sorted([int(i) for i in nums],reverse=True)[k-1])
         
