@@ -1,21 +1,9 @@
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:
-#         final=[]
-#         for i in nums:
-#             final.append(str(i))
+        strings= sorted(nums, key=lambda x:x/(10**len(str(x))-1),reverse=True)
+        str_nums=[str(i) for i in strings]
+        res=''.join(str_nums)
+        res = str(int(res))
+        return res
         
-                            
-                  
-#         return "".join(final)
-        finalize=sorted(nums,key=lambda item:str(item))
-        final=[]
-        for i in finalize:
-            final.append(str(i))
-
-        for i in range(len(final)):
-              for j in range(len(final)-1):    
-                      if str(final[j])+str(final[j+1])<str(final[j+1])+str(final[j+1]):
-                                final[j],final[j+1]=final[j+1],final[j]
-
-        return "".join(final).lstrip('0') or '0'
         
