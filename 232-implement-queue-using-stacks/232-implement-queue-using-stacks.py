@@ -1,22 +1,31 @@
 class MyQueue:
 
     def __init__(self):
-        self.stack=[]
+        self.Instack=[]
+        self.Outstack=[]        
 
     def push(self, x: int) -> None:
-        self.stack.append(x)
+        self.Instack.append(x)
 
     def pop(self) -> int:
-        return self.stack.pop(0)
+        if len(self.Outstack)==0:
+            if len(self.Instack)==0:
+                return "Cannot Dequeue from empty"
+            while len(self.Instack)>0:
+                last_element=self.Instack.pop()
+                self.Outstack.append(last_element)
+        return self.Outstack.pop()
 
     def peek(self) -> int:
-        return self.stack[0]
-
+        peek=self.pop()
+        self.Outstack.append(peek)
+        return peek
+    
     def empty(self) -> bool:
-        if self.stack:
-            return False
-        else:
+        if len(self.Outstack)==0 and len(self.Instack)==0:
             return True
+        else:
+            return False
 
 
 # Your MyQueue object will be instantiated and called as such:
