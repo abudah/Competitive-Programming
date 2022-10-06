@@ -5,9 +5,8 @@ class Solution:
             if i=='(':
                 stack.append('')
             elif i==')':
-                add=stack.pop()[::-1]
-                stack[-1]+=add
+                add=stack.pop()
+                stack[-1]+=add[::-1]
             else:
                 stack[-1]+=i
         return stack[-1]
-                
