@@ -1,12 +1,9 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        operations=['+','-','*','/']
         stack=[]
         for i in tokens:
-            if i in operations:
-                
-                second=int(stack.pop())
-                first=int(stack.pop())
+            if i in ['+','-','*','/']:
+                second,first=int(stack.pop()),int(stack.pop())
                 operate=0
                 if i=='*':
                     operate=int(first*second)    
