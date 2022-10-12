@@ -3,9 +3,9 @@ class Solution:
             start=0
             end=len(people)-1
             total=0
-            sortedPeople=sorted(people)
+            people.sort()
             while start<=end:
-                if sortedPeople[start] + sortedPeople[end]<=limit:
+                if people[start] + people[end]<=limit:
                     end-=1
                     start+=1
                 else:
