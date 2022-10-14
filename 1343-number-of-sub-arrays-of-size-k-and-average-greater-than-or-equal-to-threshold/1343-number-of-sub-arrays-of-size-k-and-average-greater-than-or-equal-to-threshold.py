@@ -7,7 +7,6 @@ class Solution:
         for i in range(1,len(arr)-k+1):
             subsum=subsum-arr[i-1]
             subsum=subsum+arr[i+k-1]
-            print(subsum)
             if int(subsum/k)>=threshold:
                 numSub+=1
     
