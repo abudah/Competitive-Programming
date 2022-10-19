@@ -1,7 +1,6 @@
 import sys
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        coll={}
         countSum=0
         start=0
         length=sys.maxsize
