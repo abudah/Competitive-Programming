@@ -4,9 +4,11 @@ class Solution:
             nums[i]=nums[i]%2
         count=0
         countSum=0
-        coll={0:1}
+        coll={}
         for i in range(len(nums)):
             countSum+=nums[i]
+            if countSum==k:
+                count+=1
             if countSum-k in coll:
                 count+=coll[countSum-k]
             if countSum in coll:
