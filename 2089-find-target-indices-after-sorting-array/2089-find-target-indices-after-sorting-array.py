@@ -6,4 +6,5 @@ class Solution:
                 index+=1
             elif i==target:
                 count+=1
+                
         return range(index,index+count)
